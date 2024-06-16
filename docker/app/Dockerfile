@@ -1,6 +1,5 @@
 FROM python:3.10
 
-COPY static/media/avatars/no_avatar.jpg /static/media/avatars/no_avatar.jpg
 WORKDIR /app
 
 RUN apt update && apt -qy upgrade
