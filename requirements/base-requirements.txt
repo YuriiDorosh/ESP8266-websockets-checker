@@ -1,8 +1,15 @@
 aiogram==2.25.1  
 fastapi==0.111.0 
+fastapi-cache2[redis]==0.2.1
 websockets==12.0
+asyncio==3.4.3 
 uvicorn==0.30.1
 SQLAlchemy==2.0.30
+SQLAlchemy-Utils==0.41.2
+sqlmodel==0.0.19
+pydantic-settings==2.3.3 
 asyncpg==0.29.0 
 alembic==1.13.1
+pyhumps==3.8.0 
+ujson==5.10.0 
 python-dotenv==1.0.0
