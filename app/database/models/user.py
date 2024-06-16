@@ -6,7 +6,7 @@ from database.mixins.id import IdMixin
 
 
 class User(Base, IdMixin, TimestampMixin):
-    __tablename__ = 'users'
+    __tablename__ = "users"
 
     telegram_tag: Mapped[str] = mapped_column(String, unique=True, nullable=False)
     telegram_id: Mapped[int] = mapped_column(Integer, unique=True, nullable=False)

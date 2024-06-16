@@ -6,6 +6,6 @@ from database.mixins.id import IdMixin
 
 
 class Wifi(Base, IdMixin, TimestampMixin):
-    __tablename__ = 'wifi'
+    __tablename__ = "wifi"
 
     is_powered: Mapped[bool] = mapped_column(Boolean, default=False)

@@ -3,6 +3,7 @@ from datetime import date
 from typing import Optional
 import uuid
 
+
 class ResponseCreateInSchema(BaseModel):
     id: uuid.UUID = Field(default_factory=uuid.uuid4, description="response id")
     signal_strength: int
@@ -12,4 +13,4 @@ class ResponseCreateInSchema(BaseModel):
     )
 
     class Config:
-        from_attributes = True 
+        from_attributes = True

@@ -2,6 +2,7 @@ from sqlalchemy import Column, UUID
 from sqlalchemy.ext.declarative import declared_attr
 import uuid
 
+
 class IdMixin:
     @declared_attr
     def id(cls):

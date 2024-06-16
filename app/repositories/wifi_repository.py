@@ -3,6 +3,7 @@ from datetime import datetime, timedelta
 from database.models.wifi import Wifi
 from utils.repository import SQLAlchemyRepository
 
+
 class WifiRepository(SQLAlchemyRepository):
     def __init__(self, session: Session):
         self.session = session
@@ -19,7 +20,11 @@ class WifiRepository(SQLAlchemyRepository):
 
     def get_wifi_records_last_24_hours(self) -> list[Wifi]:
         twenty_four_hours_ago = datetime.now() - timedelta(hours=24)
-        return self.session.query(Wifi).filter(Wifi.created_at >= twenty_four_hours_ago).all()
+        return (
+            self.session.query(Wifi)
+            .filter(Wifi.created_at >= twenty_four_hours_ago)
+            .all()
+        )
 
     def get_wifi_records_last_week(self) -> list[Wifi]:
         one_week_ago = datetime.now() - timedelta(weeks=1)

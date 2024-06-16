@@ -5,6 +5,7 @@ from datetime import datetime, timezone, timedelta
 from bot import notify_all_users
 from repositories.wifi_repository import WifiRepository
 
+
 class LightStatusMonitor:
     def __init__(self):
         self.clients = []
@@ -36,7 +37,10 @@ class LightStatusMonitor:
                     self.wifi_repository.create_wifi_record(is_powered=False)
                     await notify_all_users("Світло пропало!")
 
+
 def init_websocket_server(app: FastAPI):
     monitor = LightStatusMonitor()
     app.websocket("/ws")(monitor.websocket_endpoint)
-    app.add_event_handler("startup", lambda: asyncio.create_task(monitor.check_light_status()))
+    app.add_event_handler(
+        "startup", lambda: asyncio.create_task(monitor.check_light_status())
+    )

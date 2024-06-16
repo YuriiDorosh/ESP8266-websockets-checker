@@ -44,17 +44,22 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+
 @app.on_event("startup")
 async def on_startup():
-    redis = aioredis.from_url(redis_config.get_url(), encoding="utf8", decode_responses=True)
+    redis = aioredis.from_url(
+        redis_config.get_url(), encoding="utf8", decode_responses=True
+    )
     FastAPICache.init(RedisBackend(redis), prefix="fastapi-cache")
     init_bot()
     init_websocket_server(app)
     asyncio.create_task(start_polling())
 
+
 @app.on_event("shutdown")
 async def on_shutdown():
     logging.info("Shutting down")
 
-if __name__ == '__main__':
-    uvicorn.run(app, host='0.0.0.0', port=8000)
+
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=8000)

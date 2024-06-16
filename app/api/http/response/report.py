@@ -14,19 +14,19 @@ router = APIRouter(
 
 @router.post("/", response_model=ResponseCreateInSchema)
 async def create_report(
-    signal_strength: int, 
-    mac_address: str|None, 
+    signal_strength: int,
+    mac_address: str | None,
     db: AsyncSession = Depends(get_async_session),
 ):
 
     response_repository = ResponseRepository(db)
 
     try:
-        response_repository.create_response(signal_strength=signal_strength, 
-                                            mac_address=mac_address
-                                            )
+        response_repository.create_response(
+            signal_strength=signal_strength, mac_address=mac_address
+        )
         return {"status": "success", "detail": "Response created successfully."}
-    
+
     except HTTPException as e:
         logging.error(f"Error creating response: {e}")
         raise HTTPException(

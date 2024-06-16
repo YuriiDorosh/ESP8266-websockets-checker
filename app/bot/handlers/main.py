@@ -10,6 +10,6 @@ def register_all_handlers(dp: Dispatcher) -> None:
         register_wifi_handlers,
         register_wifi_handlers,
     ]
-    
+
     for handler in handlers:
         handler(dp)
