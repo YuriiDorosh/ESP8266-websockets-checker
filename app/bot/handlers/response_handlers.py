@@ -1,7 +1,7 @@
-from aiogram import Dispatcher, Bot
+from aiogram import Bot, Dispatcher
 from aiogram.types import Message
-from repositories.response_repository import ResponseRepository
 from bot import db
+from repositories.response_repository import ResponseRepository
 
 
 async def __wifi_status(message: Message) -> None:

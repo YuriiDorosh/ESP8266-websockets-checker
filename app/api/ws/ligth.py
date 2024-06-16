@@ -1,8 +1,8 @@
 import asyncio
+from datetime import datetime, timedelta, timezone
 
-from fastapi import FastAPI, WebSocket, WebSocketDisconnect
-from datetime import datetime, timezone, timedelta
 from bot import notify_all_users
+from fastapi import FastAPI, WebSocket, WebSocketDisconnect
 from repositories.wifi_repository import WifiRepository
 
 

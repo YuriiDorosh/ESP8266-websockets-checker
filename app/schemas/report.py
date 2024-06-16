@@ -1,7 +1,8 @@
-from pydantic import BaseModel, Field
+import uuid
 from datetime import date
 from typing import Optional
-import uuid
+
+from pydantic import BaseModel, Field
 
 
 class ResponseCreateInSchema(BaseModel):

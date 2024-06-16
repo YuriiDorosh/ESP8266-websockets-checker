@@ -1,4 +1,5 @@
 import logging
+
 from aiogram import Bot
 from repositories.user_repository import UserRepository
 

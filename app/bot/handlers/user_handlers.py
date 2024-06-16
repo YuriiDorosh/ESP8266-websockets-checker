@@ -1,7 +1,8 @@
-from aiogram import Dispatcher, Bot
+from typing import List
+
+from aiogram import Bot, Dispatcher
 from aiogram.types import Message
 from repositories.user_repository import UserRepository
-from typing import List
 
 
 async def __start(message: Message) -> None:

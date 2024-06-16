@@ -1,17 +1,17 @@
-import uvicorn
 import asyncio
 import logging
-from fastapi import FastAPI
-from fastapi.responses import UJSONResponse
-from bot import init_bot, start_polling
-from api.ws.ligth import init_websocket_server
+
+import uvicorn
 from api.routes import router as v1_router
-from fastapi import APIRouter
-from fastapi_cache import FastAPICache
+from api.ws.ligth import init_websocket_server
+from bot import init_bot, start_polling
+from config.redis import RedisConfig
+from fastapi import APIRouter, FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import UJSONResponse
+from fastapi_cache import FastAPICache
 from fastapi_cache.backends.redis import RedisBackend
 from redis import asyncio as aioredis
-from config.redis import RedisConfig
 
 logging.basicConfig(level=logging.INFO)
 

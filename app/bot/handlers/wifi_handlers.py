@@ -1,7 +1,7 @@
-from aiogram import Dispatcher, Bot
+from aiogram import Bot, Dispatcher
 from aiogram.types import Message
-from repositories.wifi_repository import WifiRepository
 from bot import db
+from repositories.wifi_repository import WifiRepository
 
 
 async def __send_status(message: Message) -> None:

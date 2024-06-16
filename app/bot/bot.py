@@ -1,8 +1,8 @@
 from aiogram import Bot, Dispatcher
 from aiogram.contrib.middlewares.logging import LoggingMiddleware
+from bot.config import BotConfig
 from bot.handlers import register_all_handlers
 from bot.utils import notify_users
-from bot.config import BotConfig
 
 bot_config = BotConfig()
 

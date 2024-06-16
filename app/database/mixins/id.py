@@ -1,6 +1,7 @@
-from sqlalchemy import Column, UUID
-from sqlalchemy.ext.declarative import declared_attr
 import uuid
+
+from sqlalchemy import UUID, Column
+from sqlalchemy.ext.declarative import declared_attr
 
 
 class IdMixin:

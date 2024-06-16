@@ -1,6 +1,8 @@
-from sqlalchemy.orm import Session
 from datetime import datetime, timedelta
+
 from database.models.wifi import Wifi
+from sqlalchemy.orm import Session
+
 from utils.repository import SQLAlchemyRepository
 
 
