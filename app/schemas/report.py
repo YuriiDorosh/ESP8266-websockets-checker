@@ -1,7 +1,9 @@
-from pydantic import BaseModel, Field
+import uuid
 from datetime import date
 from typing import Optional
-import uuid
+
+from pydantic import BaseModel, Field
+
 
 class ResponseCreateInSchema(BaseModel):
     id: uuid.UUID = Field(default_factory=uuid.uuid4, description="response id")
@@ -12,4 +14,4 @@ class ResponseCreateInSchema(BaseModel):
     )
 
     class Config:
-        from_attributes = True 
+        from_attributes = True
